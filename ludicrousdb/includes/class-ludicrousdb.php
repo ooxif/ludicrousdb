@@ -371,7 +371,7 @@ class LudicrousDB extends wpdb {
 		$q = rtrim( $q, "\r\n\t ;" );
 
 		// Not possible non-writes (phew!)
-		return preg_match( '/^SELECT\s.+\sFOR\s+UPDATE$/i', $q )
+		return preg_match( '/^SELECT\s.+\sFOR\s+UPDATE$/is', $q )
 			|| ! preg_match( '/^(?:SELECT|SHOW|DESCRIBE|DESC|EXPLAIN)\s/i', $q );
 	}
 
